@@ -1,0 +1,660 @@
+/* ============================================================
+   ESTILO GLOBAL Y ESTRUCTURA
+============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background: #f2f6fa;
+  padding: 20px;
+  color: #222;
+}
+
+.app-root {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   ENCABEZAMIENTO
+============================================================ */
+
+.header-paap {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-apascovi-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo-apascovi-grande {
+  width: 200px;
+  height: auto;
+}
+
+/* Logos pequeños debajo */
+.logos-secundarios {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+}
+
+.logo-sec {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.titulo-app {
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.subtitulo-app {
+  color: #555;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+/* ============================================================
+   TARJETAS / CARDS
+============================================================ */
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* ============================================================
+   GRID DE DATOS PERSONA
+============================================================ */
+
+.datos-persona-section {
+  margin-bottom: 20px;
+}
+
+.datos-persona-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 25px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.field-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.field-group input,
+.field-group select,
+textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cfd4da;
+  font-size: 14px;
+}
+
+.readonly-field {
+  background: #eee;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ============================================================
+   FOTO FORMATO DNI
+============================================================ */
+
+.foto-dni-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.foto-dni {
+  width: 150px;
+  height: 190px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+}
+
+.foto-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-foto {
+  padding: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.btn-foto.azul { background: #2563eb; }
+.btn-foto.verde { background: #16a34a; }
+
+/* ============================================================
+   MODAL CÁMARA
+============================================================ */
+
+.modal-camara {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-camara-contenido {
+  width: 360px;
+  text-align: center;
+}
+
+#camara-video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.camera-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn.primary {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #999;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Botón pequeñito */
+.btn.tiny {
+  padding: 4px 7px;
+  font-size: 12px;
+}
+
+/* ============================================================
+   BLOQUE: DATOS ELABORACIÓN DEL PAAP
+============================================================ */
+
+.datos-elaboracion-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.fila-apoyo {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.fila-apoyo input {
+  flex: 1;
+}
+
+/* Botones genéricos */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+}
+
+/* ============================================================
+   DISEÑO DEL PAAP · TABS
+============================================================ */
+
+.diseno-paap-section {
+  margin-top: 10px;
+}
+
+.tabs-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab-btn.active {
+  background: #fff;
+  border-color: #9ca3af;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.tabs-body {
+  margin-top: 5px;
+}
+
+.area-panel {
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+}
+
+.area-header {
+  border-left: 6px solid var(--area-color, #2563eb);
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.area-header h3 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.area-header p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Selects de programa / OG / OE */
+
+.area-selects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+/* ============================================================
+   OBJETIVO ESPECÍFICO + SMART
+============================================================ */
+
+.og-box-grande {
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 14px;
+  margin-bottom: 18px;
+  background: #f9fafb;
+}
+
+.og-box-titulo {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.lbl-smart {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.textarea-objetivo {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+.btn-guia-smart {
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.guia-smart {
+  font-size: 12px;
+  background: #eef2ff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  border: 1px solid #c7d2fe;
+  margin-bottom: 10px;
+}
+
+.guia-smart ul {
+  margin-left: 16px;
+  margin-top: 4px;
+}
+
+.guia-smart ol {
+  margin-left: 20px;
+  margin-top: 6px;
+}
+
+.botones-objetivo {
+  display: flex;
+  gap: 10px;
+}
+
+/* ============================================================
+   TAREAS / ACTIVIDADES
+============================================================ */
+
+.titulo-tareas {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.tarea-row-completa {
+  display: grid;
+  grid-template-columns: auto 1.2fr 1.2fr auto;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.tarea-row-completa:first-of-type {
+  border-top: none;
+}
+
+.tarea-original-texto {
+  font-size: 13px;
+}
+
+.tarea-custom-textarea {
+  font-size: 13px;
+  min-height: 48px;
+  resize: vertical;
+}
+
+/* ============================================================
+   RESUMEN PAAP · CABECERA
+============================================================ */
+
+.resumen-paap-section {
+  margin-top: 10px;
+}
+
+.titulo-resumen {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.resumen-datos-globales {
+  display: grid;
+  grid-template-columns: 2fr 2fr 180px;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.resumen-bloque {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.resumen-bloque h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.resumen-bloque p {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+/* Foto en resumen */
+
+.resumen-foto-dni-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-dni-resumen {
+  width: 130px;
+  height: 165px;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  object-fit: cover;
+}
+
+/* ============================================================
+   RESUMEN POR ÁREAS (COLORES PASTEL + EMOJIS GRANDES)
+============================================================ */
+
+.resumen-areas-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.resumen-area-card {
+  border-radius: 10px;
+  padding: 12px 14px;
+  border-left: 8px solid var(--area-color, #2563eb);
+  background: rgba(37, 99, 235, 0.06); /* pastel por defecto */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.resumen-area-titulo {
+  font-size: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resumen-area-emoji {
+  font-size: 20px;
+}
+
+.resumen-programa h4 {
+  font-size: 14px;
+  margin: 4px 0 4px 0;
+}
+
+.resumen-og-bloque {
+  border-left: 2px dashed rgba(0,0,0,0.15);
+  padding-left: 8px;
+  margin-top: 4px;
+}
+
+.resumen-og-titulo {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.resumen-oe-bloque {
+  margin-left: 6px;
+  margin-top: 3px;
+}
+
+.resumen-oe-titulo {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.resumen-oe-personalizado {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.resumen-tareas-lista {
+  margin-top: 2px;
+  margin-left: 18px;
+}
+
+.resumen-tareas-lista li {
+  font-size: 13px;
+}
+
+/* ============================================================
+   BOTONES EXPORTACIÓN PDF / EXCEL
+============================================================ */
+
+.resumen-export-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-export {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-export.rojo {
+  background: #dc2626;
+}
+
+.btn-export.verde {
+  background: #16a34a;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+  .datos-persona-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .datos-elaboracion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .area-selects {
+    grid-template-columns: 1fr;
+  }
+
+  .tarea-row-completa {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .resumen-datos-globales {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   FIX MÓVIL: evitar que selects/inputs se salgan de la tarjeta
+   (sin tocar HTML)
+============================================================ */
+
+/* Permite que hijos de grids/flex puedan encoger (clave anti-overflow) */
+.datos-persona-grid > *,
+.datos-elaboracion-grid > *,
+.area-selects > *,
+.tarea-row-completa > * {
+  min-width: 0;
+}
+
+/* Controles: nunca más anchos que su contenedor */
+.field-group input,
+.field-group select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Extra de seguridad para selects (texto largo) */
+.field-group select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Por si algún elemento interno desborda visualmente */
+.card,
+.area-panel {
+  overflow: hidden;
+}
+
+/* ============================================================
+   FIX extra móvil (Área 2): evitar overflow por grid-column inline
+   El bloque "Programación" lleva grid-column: 2 / 4 en el HTML.
+   En móviles (1 columna) eso crea columnas implícitas y empuja el layout.
+============================================================ */
+@media (max-width: 900px) {
+  /* Cualquier field-group que venga con grid-column inline, que ocupe toda la fila */
+  .area-selects .field-group[style*="grid-column"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Seguridad anti-scroll horizontal */
+  body { overflow-x: hidden; }
+  .area-selects { overflow-x: hidden; }
+}
